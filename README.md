@@ -1,5 +1,7 @@
 # 静态资源保存方案
 
+![静态资源保存方案](./icon.png)
+
 高度定制化的前端静态资源保存方案，减少前后端分离成本。
 
 ## 适用场景 && 解决问题
@@ -132,7 +134,6 @@ http://resource.static.io/release/demo/trunk/index.html
 ```
 http://site.static.io/resource/demo/??stable/1.0.0/index.js,trunk/index.js
 http://resource.static.io/release/demo/??stable/1.0.0/index.js,trunk/index.js
-
 
 http://site.static.io/resource/demo/??stable/1.0.0/index.js,stable/lastest/index.js
 http://resource.static.io/release/demo/??stable/1.0.0/index.js,stable/lastest/index.js
