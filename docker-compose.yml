@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  static-serv:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 1024:80
+    volumes:
+      - ./conf/nginx.example.conf:/usr/local/openresty/nginx/conf/nginx.conf
+      - ./conf:/data/conf
+      - ./deploy/:/data/public/release/
+      - ./log/:/data/log/
+    links:
+        - cache-serv:mc
+    extra_hosts:
+      - "resource.static.io:127.0.0.1"
+      - "www.static.io:127.0.0.1"
+  cache-serv:
+    image: memcached:1.4.39-alpine

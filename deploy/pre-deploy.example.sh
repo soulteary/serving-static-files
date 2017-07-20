@@ -4,7 +4,7 @@
 #BUILD ARGV...
 
 ## 移动构建完毕的代码到指定目录
-mkdir -p release/{stable,trunk}
+mkdir -p release/{stable,dev}
 rm -rf release/stable/1.0.0
 mv dest release/stable/1.0.0
 rm -rf lastest && ln -s 1.0.0 lastest
