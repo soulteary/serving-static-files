@@ -43,7 +43,10 @@ RUN curl -sSL "http://keplerproject.github.io/luarocks/releases/luarocks-${LUARO
     --lua-suffix=jit && \
     make && make install && cd .. && rm -rf luarocks-*
 
-RUN "${LUAJIT_PREFIX}/bin/luarocks" install stringy
+RUN "${LUAJIT_PREFIX}/bin/luarocks" install stringy && \
+    "${LUAJIT_PREFIX}/bin/luarocks" install lua-resty-exec
+
+RUN curl -sSL https://github.com/jprjr/sockexec/releases/download/2.0.1/sockexec-x86_64-linux-musl.tar.gz | tar zx
 
 # ===========
 # = cleanup =

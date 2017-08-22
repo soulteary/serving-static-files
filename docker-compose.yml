@@ -11,6 +11,7 @@ services:
     volumes:
       - ./conf/nginx.example.conf:/usr/local/openresty/nginx/conf/nginx.conf
       - ./conf:/data/conf
+      - ./lua:/data/lua
       - ./deploy/:/data/public/release/
       - ./log/:/data/log/
     links:
